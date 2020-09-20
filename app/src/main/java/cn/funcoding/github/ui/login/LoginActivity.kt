@@ -8,12 +8,14 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import cn.funcoding.github.MainMvpFragment
 
 import cn.funcoding.github.R
 
@@ -25,6 +27,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_login)
+
+        val mainFragment = MainMvpFragment()
+        Log.d("mvp", "onCreate: "+mainFragment.toString())
+        Log.d("mvp", "onCreate: "+mainFragment.presenter.toString())
+        Log.d("mvp", "onCreate: "+mainFragment.presenter.view.toString())
 
         val username = findViewById<EditText>(R.id.username)
         val password = findViewById<EditText>(R.id.password)
